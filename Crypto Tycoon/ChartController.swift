@@ -14,8 +14,13 @@ class ChartController: UIViewController {
 
     @IBOutlet weak var chart: LineChartView!
     
+    var bitcoin: Currency?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initChart()
+        bitcoin = Currency(name: "BitCoin", chart: self)
+        bitcoin?.getGraphData(from: .lastMonth)
         
         // Do any additional setup after loading the view.
     }
@@ -35,12 +40,12 @@ class ChartController: UIViewController {
         chart.drawBordersEnabled = true
     }
     
-    func setChart(x: [Double], y: [Double]) {
+    func setChart(data: CurrencyData) {
         
         var dataEntries: [ChartDataEntry] = []
         
-        for i in 0..<x.count {
-            let dataEntry = ChartDataEntry(x: x[i], y: y[i])
+        for i in 0..<data.dates.count {
+            let dataEntry = ChartDataEntry(x: data.dates[i], y: data.values[i])
             dataEntries.append(dataEntry)
         }
         

@@ -7,46 +7,45 @@
 //
 
 import Foundation
+import Charts
+import CryptoCurrencyKit
 
 struct Currency {
-    var name: String
-    
+    let name: String
     var currentValue: Double?
-    var yesterday: CurrencyData?
-    var lastWeek: CurrencyData?
-    var lastMonth: CurrencyData?
-    var lastYear: CurrencyData?
+    var chart: ChartController
     
-    init(name: String) {
+    init(name: String, chart: ChartController) {
         self.name = name
+        self.chart = chart
     }
     
-    public mutating func getGraphData(from date: DateManager.Dates) -> CurrencyData? {
+    public mutating func getGraphData(from date: DateManager.Dates) {
         switch date {
         case .now:
-            print("Attempting to return graph data from now?")
-            return nil
-        case .yesterday:
-            yesterday = calculateGraphData(data: yesterday)
-            return yesterday
-        case .lastWeek:
-            lastWeek = calculateGraphData(data: lastWeek)
-            return lastWeek
-        case .lastMonth:
-            lastMonth = calculateGraphData(data: lastMonth)
-            return lastMonth
-        case .lastYear:
-            lastYear = calculateGraphData(data: lastYear)
-            return lastYear
+            print("Attempting to get graph data from now?")
+        default:
+            calculateGraphData(date: date)
         }
     }
     
-    private func calculateGraphData(data: CurrencyData?) -> CurrencyData {
-        if let oldData = data {
-            // TODO: Refresh old data
-            return oldData
+    private func calculateGraphData(date: DateManager.Dates) {
+        CryptoCurrencyKit.fetchGraph(Graph.priceUSD, for: name, from: DateManager.getDate(from: date), to: DateManager.getDate(from: .now)) { (response) in
+            switch response {
+            case .success(let currency):
+                var dates = [Double]()
+                var values = [Double]()
+                for point in currency {
+                    dates.append(point.timestamp)
+                    values.append(point.value)
+                }
+                self.chart.setChart(data: CurrencyData(dates: dates, values: values))
+            case .failure(let error):
+                print(error)
+            }
         }
     }
+    
 }
 
 struct CurrencyData {
