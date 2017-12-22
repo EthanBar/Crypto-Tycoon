@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F625A00C71B8EBFC1F534B7 /* Pods_Crypto_Tycoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D55814AF5569A652250C718 /* Pods_Crypto_Tycoon.framework */; };
 		AA93E3581FECBDC9004BD3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3571FECBDC9004BD3F1 /* AppDelegate.swift */; };
 		AA93E35A1FECBDC9004BD3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3591FECBDC9004BD3F1 /* ViewController.swift */; };
 		AA93E35D1FECBDC9004BD3F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA93E35B1FECBDC9004BD3F1 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D55814AF5569A652250C718 /* Pods_Crypto_Tycoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Tycoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E9E48A0A2FD5F05096D25E3 /* Pods-Crypto Tycoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Tycoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon.debug.xcconfig"; sourceTree = "<group>"; };
 		AA93E3541FECBDC9004BD3F1 /* Crypto Tycoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Tycoon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA93E3571FECBDC9004BD3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA93E3591FECBDC9004BD3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		AA93E35E1FECBDC9004BD3F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA93E3611FECBDC9004BD3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA93E3631FECBDC9004BD3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB1B4CCD15CA854288D08EE /* Pods-Crypto Tycoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Tycoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F625A00C71B8EBFC1F534B7 /* Pods_Crypto_Tycoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0A6CDE201568AA46B95F00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E9E48A0A2FD5F05096D25E3 /* Pods-Crypto Tycoon.debug.xcconfig */,
+				AEB1B4CCD15CA854288D08EE /* Pods-Crypto Tycoon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA93E34B1FECBDC9004BD3F1 = {
 			isa = PBXGroup;
 			children = (
 				AA93E3561FECBDC9004BD3F1 /* Crypto Tycoon */,
 				AA93E3551FECBDC9004BD3F1 /* Products */,
+				4F0A6CDE201568AA46B95F00 /* Pods */,
+				CF1A7A1943698BE11FDDB563 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = "Crypto Tycoon";
 			sourceTree = "<group>";
 		};
+		CF1A7A1943698BE11FDDB563 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D55814AF5569A652250C718 /* Pods_Crypto_Tycoon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA93E3661FECBDC9004BD3F1 /* Build configuration list for PBXNativeTarget "Crypto Tycoon" */;
 			buildPhases = (
+				5F12CAD49F8ED1E17DEF3247 /* [CP] Check Pods Manifest.lock */,
 				AA93E3501FECBDC9004BD3F1 /* Sources */,
 				AA93E3511FECBDC9004BD3F1 /* Frameworks */,
 				AA93E3521FECBDC9004BD3F1 /* Resources */,
+				D503E8889E1B69804A1667D8 /* [CP] Embed Pods Frameworks */,
+				FDB77725A984B85E56603A48 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F12CAD49F8ED1E17DEF3247 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crypto Tycoon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D503E8889E1B69804A1667D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoCurrencyKit/CryptoCurrencyKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoCurrencyKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDB77725A984B85E56603A48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA93E3501FECBDC9004BD3F1 /* Sources */ = {
@@ -272,11 +355,13 @@
 		};
 		AA93E3671FECBDC9004BD3F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E9E48A0A2FD5F05096D25E3 /* Pods-Crypto Tycoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N6526VUKL;
 				INFOPLIST_FILE = "Crypto Tycoon/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.ethanbar.github.Crypto-Tycoon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +372,13 @@
 		};
 		AA93E3681FECBDC9004BD3F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB1B4CCD15CA854288D08EE /* Pods-Crypto Tycoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N6526VUKL;
 				INFOPLIST_FILE = "Crypto Tycoon/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.ethanbar.github.Crypto-Tycoon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
