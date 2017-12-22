@@ -20,7 +20,7 @@ struct Currency {
         self.chart = chart
     }
     
-    public mutating func getGraphData(from date: DateManager.Dates) {
+    public mutating func updateGraphData(from date: DateManager.Dates) {
         switch date {
         case .now:
             print("Attempting to get graph data from now?")

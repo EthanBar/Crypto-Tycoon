@@ -33,8 +33,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4aQ-k3-Ev8">
+                                <rect key="frame" x="80" y="296" width="215" height="29"/>
+                                <segments>
+                                    <segment title="Day"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onTimePickerChanged:" destination="fxV-rW-7Kf" eventType="valueChanged" id="gk7-H2-iTq"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btclogo" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-6A-Otu">
+                                <rect key="frame" x="5" y="25" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="YEh-vI-Qn9"/>
+                                    <constraint firstAttribute="height" constant="40" id="bzN-5N-5kt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC: $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChC-jU-zB2">
+                                <rect key="frame" x="75" y="35" width="224.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABx-yz-L5g" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="20" width="295" height="200"/>
+                                <rect key="frame" x="40" y="76" width="295" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="JhV-BN-wDY"/>
@@ -43,13 +68,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ABx-yz-L5g" firstAttribute="top" secondItem="ZDJ-4k-Jb7" secondAttribute="top" constant="20" id="9wy-zO-zie"/>
+                            <constraint firstItem="Gzj-6A-Otu" firstAttribute="top" secondItem="ZDJ-4k-Jb7" secondAttribute="top" constant="25" id="2zu-Qn-NG8"/>
+                            <constraint firstItem="ChC-jU-zB2" firstAttribute="leading" secondItem="Gzj-6A-Otu" secondAttribute="trailing" constant="30" id="L1E-wP-iLn"/>
+                            <constraint firstItem="ABx-yz-L5g" firstAttribute="top" secondItem="ChC-jU-zB2" secondAttribute="bottom" constant="20" id="VLR-ln-WsS"/>
                             <constraint firstItem="ABx-yz-L5g" firstAttribute="leading" secondItem="49h-bB-pwI" secondAttribute="leading" constant="40" id="XYz-rW-BZ4"/>
+                            <constraint firstItem="4aQ-k3-Ev8" firstAttribute="centerX" secondItem="ZDJ-4k-Jb7" secondAttribute="centerX" id="cM9-4y-RUV"/>
                             <constraint firstItem="49h-bB-pwI" firstAttribute="trailing" secondItem="ABx-yz-L5g" secondAttribute="trailing" constant="40" id="cu6-Zu-Z7J"/>
+                            <constraint firstItem="ChC-jU-zB2" firstAttribute="top" secondItem="ZDJ-4k-Jb7" secondAttribute="top" constant="35" id="koX-j7-pDc"/>
+                            <constraint firstItem="Gzj-6A-Otu" firstAttribute="leading" secondItem="ZDJ-4k-Jb7" secondAttribute="leading" constant="5" id="lDf-K3-dlZ"/>
+                            <constraint firstItem="ChC-jU-zB2" firstAttribute="centerX" secondItem="ZDJ-4k-Jb7" secondAttribute="centerX" id="p4J-ij-CpY"/>
+                            <constraint firstItem="4aQ-k3-Ev8" firstAttribute="top" secondItem="ABx-yz-L5g" secondAttribute="bottom" constant="20" id="y5t-CD-ejI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="49h-bB-pwI"/>
                     </view>
                     <connections>
+                        <outlet property="bitcoinPrice" destination="ChC-jU-zB2" id="Iz7-ys-3LI"/>
                         <outlet property="chart" destination="ABx-yz-L5g" id="ScO-HA-UAV"/>
                     </connections>
                 </viewController>
@@ -58,4 +91,7 @@
             <point key="canvasLocation" x="940" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btclogo" width="299" height="300"/>
+    </resources>
 </document>

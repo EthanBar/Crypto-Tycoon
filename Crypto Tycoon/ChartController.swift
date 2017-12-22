@@ -13,6 +13,7 @@ import CryptoCurrencyKit
 class ChartController: UIViewController {
 
     @IBOutlet weak var chart: LineChartView!
+    @IBOutlet weak var bitcoinPrice: UILabel!
     
     var bitcoin: Currency?
     
@@ -20,11 +21,37 @@ class ChartController: UIViewController {
         super.viewDidLoad()
         initChart()
         bitcoin = Currency(name: "BitCoin", chart: self)
-        bitcoin?.getGraphData(from: .lastMonth)
-        
+        bitcoin?.updateGraphData(from: .yesterday)
+        updatePrice()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func onTimePickerChanged(_ sender: UISegmentedControl) {
+        switch sender.titleForSegment(at: sender.selectedSegmentIndex)! {
+        case "Day":
+            bitcoin?.updateGraphData(from: .yesterday)
+        case "Week":
+            bitcoin?.updateGraphData(from: .lastWeek)
+        case "Month":
+            bitcoin?.updateGraphData(from: .lastMonth)
+        case "Year":
+            bitcoin?.updateGraphData(from: .lastYear)
+        default:
+            print("Time picker unknown value")
+        }
+    }
+    
+    func updatePrice() {
+        CryptoCurrencyKit.fetchTicker(coinName: "BitCoin", convert: .jpy) { response in
+            switch response {
+            case .success(let bitCoin):
+                self.bitcoinPrice.text = "BTC: $\(bitCoin.priceUSD!)"
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
