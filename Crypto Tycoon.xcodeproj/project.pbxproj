@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		7F625A00C71B8EBFC1F534B7 /* Pods_Crypto_Tycoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D55814AF5569A652250C718 /* Pods_Crypto_Tycoon.framework */; };
 		AA93E3581FECBDC9004BD3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3571FECBDC9004BD3F1 /* AppDelegate.swift */; };
-		AA93E35A1FECBDC9004BD3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3591FECBDC9004BD3F1 /* ViewController.swift */; };
+		AA93E35A1FECBDC9004BD3F1 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3591FECBDC9004BD3F1 /* MainMenuController.swift */; };
 		AA93E35D1FECBDC9004BD3F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA93E35B1FECBDC9004BD3F1 /* Main.storyboard */; };
 		AA93E35F1FECBDC9004BD3F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA93E35E1FECBDC9004BD3F1 /* Assets.xcassets */; };
 		AA93E3621FECBDC9004BD3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA93E3601FECBDC9004BD3F1 /* LaunchScreen.storyboard */; };
+		AA93E36A1FECC03D004BD3F1 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3691FECC03D004BD3F1 /* ChartController.swift */; };
+		AA93E36C1FECC108004BD3F1 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E36B1FECC108004BD3F1 /* DateManager.swift */; };
+		AA93E36F1FECC36B004BD3F1 /* CryptoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E36E1FECC36B004BD3F1 /* CryptoDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +23,14 @@
 		4E9E48A0A2FD5F05096D25E3 /* Pods-Crypto Tycoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Tycoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon.debug.xcconfig"; sourceTree = "<group>"; };
 		AA93E3541FECBDC9004BD3F1 /* Crypto Tycoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Tycoon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA93E3571FECBDC9004BD3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA93E3591FECBDC9004BD3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA93E3591FECBDC9004BD3F1 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		AA93E35C1FECBDC9004BD3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA93E35E1FECBDC9004BD3F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA93E3611FECBDC9004BD3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA93E3631FECBDC9004BD3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA93E3691FECC03D004BD3F1 /* ChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
+		AA93E36B1FECC108004BD3F1 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		AA93E36E1FECC36B004BD3F1 /* CryptoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataManager.swift; sourceTree = "<group>"; };
 		AEB1B4CCD15CA854288D08EE /* Pods-Crypto Tycoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Tycoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +76,25 @@
 		AA93E3561FECBDC9004BD3F1 /* Crypto Tycoon */ = {
 			isa = PBXGroup;
 			children = (
-				AA93E3571FECBDC9004BD3F1 /* AppDelegate.swift */,
-				AA93E3591FECBDC9004BD3F1 /* ViewController.swift */,
+				AA93E36D1FECC2D5004BD3F1 /* Supporting Files */,
+				AA93E3591FECBDC9004BD3F1 /* MainMenuController.swift */,
 				AA93E35B1FECBDC9004BD3F1 /* Main.storyboard */,
-				AA93E35E1FECBDC9004BD3F1 /* Assets.xcassets */,
-				AA93E3601FECBDC9004BD3F1 /* LaunchScreen.storyboard */,
+				AA93E36B1FECC108004BD3F1 /* DateManager.swift */,
+				AA93E3691FECC03D004BD3F1 /* ChartController.swift */,
+				AA93E36E1FECC36B004BD3F1 /* CryptoDataManager.swift */,
 				AA93E3631FECBDC9004BD3F1 /* Info.plist */,
 			);
 			path = "Crypto Tycoon";
+			sourceTree = "<group>";
+		};
+		AA93E36D1FECC2D5004BD3F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA93E3571FECBDC9004BD3F1 /* AppDelegate.swift */,
+				AA93E3601FECBDC9004BD3F1 /* LaunchScreen.storyboard */,
+				AA93E35E1FECBDC9004BD3F1 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CF1A7A1943698BE11FDDB563 /* Frameworks */ = {
@@ -219,7 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA93E35A1FECBDC9004BD3F1 /* ViewController.swift in Sources */,
+				AA93E36F1FECC36B004BD3F1 /* CryptoDataManager.swift in Sources */,
+				AA93E36A1FECC03D004BD3F1 /* ChartController.swift in Sources */,
+				AA93E36C1FECC108004BD3F1 /* DateManager.swift in Sources */,
+				AA93E35A1FECBDC9004BD3F1 /* MainMenuController.swift in Sources */,
 				AA93E3581FECBDC9004BD3F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
