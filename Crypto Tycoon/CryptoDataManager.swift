@@ -13,14 +13,17 @@ import CryptoCurrencyKit
 struct Currency {
     let name: String
     var currentValue: Double?
-    var chart: ChartController
+    static var chart: ChartController?
     
-    init(name: String, chart: ChartController) {
+    init(name: String) {
         self.name = name
+    }
+    
+    static func loadChart(chart: ChartController) {
         self.chart = chart
     }
     
-    public mutating func updateGraphData(from date: DateManager.Dates) {
+    public func updateGraphData(from date: DateManager.Dates) {
         switch date {
         case .now:
             print("Attempting to get graph data from now?")
@@ -39,7 +42,7 @@ struct Currency {
                     dates.append(point.timestamp)
                     values.append(point.value)
                 }
-                self.chart.setChart(data: CurrencyData(dates: dates, values: values))
+                Currency.chart?.setChart(data: CurrencyData(dates: dates, values: values))
             case .failure(let error):
                 print(error)
             }

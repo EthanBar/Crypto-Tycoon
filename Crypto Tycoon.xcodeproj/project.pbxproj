@@ -16,6 +16,7 @@
 		AA93E36A1FECC03D004BD3F1 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3691FECC03D004BD3F1 /* ChartController.swift */; };
 		AA93E36C1FECC108004BD3F1 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E36B1FECC108004BD3F1 /* DateManager.swift */; };
 		AA93E36F1FECC36B004BD3F1 /* CryptoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E36E1FECC36B004BD3F1 /* CryptoDataManager.swift */; };
+		AA93E3711FED9F44004BD3F1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93E3701FED9F44004BD3F1 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		AA93E3691FECC03D004BD3F1 /* ChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
 		AA93E36B1FECC108004BD3F1 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		AA93E36E1FECC36B004BD3F1 /* CryptoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataManager.swift; sourceTree = "<group>"; };
+		AA93E3701FED9F44004BD3F1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AEB1B4CCD15CA854288D08EE /* Pods-Crypto Tycoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Tycoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Tycoon/Pods-Crypto Tycoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				AA93E36D1FECC2D5004BD3F1 /* Supporting Files */,
 				AA93E3591FECBDC9004BD3F1 /* MainMenuController.swift */,
 				AA93E35B1FECBDC9004BD3F1 /* Main.storyboard */,
+				AA93E3701FED9F44004BD3F1 /* TableViewController.swift */,
 				AA93E36B1FECC108004BD3F1 /* DateManager.swift */,
 				AA93E3691FECC03D004BD3F1 /* ChartController.swift */,
 				AA93E36E1FECC36B004BD3F1 /* CryptoDataManager.swift */,
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA93E36F1FECC36B004BD3F1 /* CryptoDataManager.swift in Sources */,
+				AA93E3711FED9F44004BD3F1 /* TableViewController.swift in Sources */,
 				AA93E36A1FECC03D004BD3F1 /* ChartController.swift in Sources */,
 				AA93E36C1FECC108004BD3F1 /* DateManager.swift in Sources */,
 				AA93E35A1FECBDC9004BD3F1 /* MainMenuController.swift in Sources */,
