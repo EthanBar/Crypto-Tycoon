@@ -141,7 +141,7 @@
                                 </constraints>
                             </scrollView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ag-bE-D0W">
-                                <rect key="frame" x="50" y="10" width="275" height="60"/>
+                                <rect key="frame" x="100" y="10" width="175" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GDE-G1-7Z4"/>
                                 </constraints>
@@ -149,7 +149,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1Ag-bE-D0W" secondAttribute="trailing" constant="50" id="195-Mn-al6"/>
+                            <constraint firstAttribute="trailing" secondItem="1Ag-bE-D0W" secondAttribute="trailing" constant="100" id="195-Mn-al6"/>
                             <constraint firstItem="Gzj-6A-Otu" firstAttribute="top" secondItem="ZDJ-4k-Jb7" secondAttribute="top" constant="25" id="2zu-Qn-NG8"/>
                             <constraint firstItem="OkW-j9-CvA" firstAttribute="leading" secondItem="49h-bB-pwI" secondAttribute="leading" constant="30" id="4Na-Qy-kVK"/>
                             <constraint firstItem="1Ag-bE-D0W" firstAttribute="top" secondItem="ZDJ-4k-Jb7" secondAttribute="top" constant="10" id="JS2-G4-4J3"/>
@@ -162,7 +162,7 @@
                             <constraint firstItem="ChC-jU-zB2" firstAttribute="top" secondItem="ZDJ-4k-Jb7" secondAttribute="top" constant="100" id="koX-j7-pDc"/>
                             <constraint firstItem="Gzj-6A-Otu" firstAttribute="leading" secondItem="ZDJ-4k-Jb7" secondAttribute="leading" constant="15" id="lDf-K3-dlZ"/>
                             <constraint firstItem="ChC-jU-zB2" firstAttribute="centerX" secondItem="ZDJ-4k-Jb7" secondAttribute="centerX" id="p4J-ij-CpY"/>
-                            <constraint firstItem="1Ag-bE-D0W" firstAttribute="leading" secondItem="49h-bB-pwI" secondAttribute="leading" constant="50" id="rcD-jC-Rrc"/>
+                            <constraint firstItem="1Ag-bE-D0W" firstAttribute="leading" secondItem="49h-bB-pwI" secondAttribute="leading" constant="100" id="rcD-jC-Rrc"/>
                             <constraint firstItem="49h-bB-pwI" firstAttribute="trailing" secondItem="OkW-j9-CvA" secondAttribute="trailing" constant="30" id="tP7-hk-nX2"/>
                             <constraint firstItem="4aQ-k3-Ev8" firstAttribute="top" secondItem="ABx-yz-L5g" secondAttribute="bottom" constant="20" id="y5t-CD-ejI"/>
                             <constraint firstItem="49h-bB-pwI" firstAttribute="bottom" secondItem="OkW-j9-CvA" secondAttribute="bottom" constant="20" id="zYt-V3-IFN"/>
@@ -172,8 +172,10 @@
                     <tabBarItem key="tabBarItem" title="Overview" id="mqR-H0-KqU"/>
                     <connections>
                         <outlet property="chart" destination="ABx-yz-L5g" id="ScO-HA-UAV"/>
+                        <outlet property="coinImage" destination="Gzj-6A-Otu" id="s71-fJ-Ygw"/>
                         <outlet property="coinPicker" destination="1Ag-bE-D0W" id="25x-qn-H4B"/>
                         <outlet property="currentPrice" destination="ChC-jU-zB2" id="Iz7-ys-3LI"/>
+                        <outlet property="dateSelector" destination="4aQ-k3-Ev8" id="o6d-qq-Ozv"/>
                         <outlet property="tableView" destination="mhL-af-UOO" id="8G6-DX-TfC"/>
                     </connections>
                 </viewController>

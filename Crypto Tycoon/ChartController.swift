@@ -17,7 +17,8 @@ class ChartController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     @IBOutlet weak var currentPrice: UILabel!
     @IBOutlet weak var coinPicker: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var coinImage: UIImageView!
+    @IBOutlet weak var dateSelector: UISegmentedControl!
     
     // Store data about each coin here
     var coins: [CoinData] = []
@@ -36,10 +37,10 @@ class ChartController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         coinPicker.delegate = self
         initChart()
         Currency.loadChart(chart: self)
-        coins.append(CoinData(displayName: "Bitcoin", idName: "bitcoin", shortName: "BTC", picture: #imageLiteral(resourceName: "btclogo")))
-        coins.append(CoinData(displayName: "Litecoin", idName: "litecoin", shortName: "LTC", picture: #imageLiteral(resourceName: "btclogo")))
-        coins.append(CoinData(displayName: "Ethereum", idName: "ethereum", shortName: "ETH", picture: #imageLiteral(resourceName: "btclogo")))
-        coins.append(CoinData(displayName: "Dogecoin", idName: "dogecoin", shortName: "DOGE", picture: #imageLiteral(resourceName: "btclogo")))
+        coins.append(CoinData(displayName: "Bitcoin", idName: "bitcoin", shortName: "BTC", picture: #imageLiteral(resourceName: "btclogo"), color: #colorLiteral(red: 0.9720916152, green: 0.6221430898, blue: 0.2032132149, alpha: 1)))
+        coins.append(CoinData(displayName: "Litecoin", idName: "litecoin", shortName: "LTC  ", picture: #imageLiteral(resourceName: "ltclogo"), color: #colorLiteral(red: 0.5489576459, green: 0.5490553379, blue: 0.5489515066, alpha: 1)))
+        coins.append(CoinData(displayName: "Ethereum", idName: "ethereum", shortName: "ETH", picture: #imageLiteral(resourceName: "ethlogo"), color: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)))
+        coins.append(CoinData(displayName: "Dogecoin", idName: "dogecoin", shortName: "DOGE", picture: #imageLiteral(resourceName: "dogelogo"), color: #colorLiteral(red: 0.8575350642, green: 0.8008928571, blue: 0.3180749008, alpha: 1)))
         currentCoin = coins[0]
         updateGraph()
     }
@@ -63,7 +64,7 @@ class ChartController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     // On picker change
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentCoin = coins[row]
-        updateCurrentCoinPrice()
+        updateCurrentCoin()
         updateGraph()
     }
     
@@ -72,7 +73,7 @@ class ChartController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             switch response {
             case .success(let data):
                 self.data = data
-                self.updateCurrentCoinPrice()
+                self.updateCurrentCoin()
             case .failure(let error):
                 print(error)
             }
@@ -95,7 +96,9 @@ class ChartController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         updateGraph()
     }
     
-    func updateCurrentCoinPrice() {
+    func updateCurrentCoin() {
+        coinImage.image = currentCoin?.picture
+        dateSelector.tintColor = currentCoin?.color
         if (data != nil) {
             let btcTicker = getTicker(id: (currentCoin?.idName)!)
             currentPrice.text = "\((currentCoin?.shortName)!): $\(btcTicker.priceUSD!) (\(btcTicker.percentChange24h!))%"
@@ -134,7 +137,7 @@ class ChartController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         let chartDataSet = LineChartDataSet(values: dataEntries, label: nil)
         let chartData = LineChartData(dataSet: chartDataSet)
         chartDataSet.circleRadius = 0
-        chartDataSet.colors = [UIColor(red:0.97, green:0.62, blue:0.19, alpha:1.0)]
+        chartDataSet.colors = [(currentCoin?.color)!]
         chart.data = chartData
         
     }
@@ -147,12 +150,14 @@ struct CoinData {
     var shortName: String
     var picture: UIImage
     var currency: Currency
+    var color: UIColor
     
-    init(displayName: String, idName: String, shortName: String, picture: UIImage) {
+    init(displayName: String, idName: String, shortName: String, picture: UIImage, color: UIColor) {
         self.displayName = displayName
         self.idName = idName
         self.shortName = shortName
         self.picture = picture
+        self.color = color
         currency = Currency(name: idName)
     }
 }
